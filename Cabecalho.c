@@ -35,3 +35,5 @@ void set_ano(Filme* f, int novo);
 
 //função que acessa e modifica a faixa etária de um filme
 void set_faixaetaria(Filme* f, int novo);
+
+//26 mai
