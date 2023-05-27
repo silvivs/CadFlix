@@ -12,7 +12,7 @@ struct filme {
 };
 
 Filme* criar_filme() {
-  Filme* f = (Filme*) malloc(sizeof(FIlme));
+  Filme* f = (Filme*) malloc(sizeof(Filme));
 
   if(f == NULL) {
     printf("Memória insuficiente!\n");
@@ -26,10 +26,12 @@ void free_filme(Filme* f) {
 }
 
 void imprimir_filme(Filme* f) {
+
   printf("Nome: %s\n", f.nome);
   printf("Preço: %.2f\n", f.preco):
   printf("Diretor: %s\n", f.diretor);
   printf("Ano: %d\n", f.ano);
   printf("Gênero: %s\n", f.genero);
   printf("Faixa etária: %d\n", f.idade);
+
 }
