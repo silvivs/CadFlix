@@ -6,6 +6,9 @@
 //estrutura para um Filme
 typedef struct filme Filme;
 
+//estrutura para informações a respeito do filme
+typedef struct info Info;
+
 //Função que cria e retorna um ponteiro simples para o tipo Filme
 Filme* criar_filme();
 
@@ -36,4 +39,8 @@ void set_ano(Filme* f, int novo);
 //função que acessa e modifica a faixa etária de um filme
 void set_faixaetaria(Filme* f, int novo);
 
+//menu principal
+void menu(void);
 
+//menu secundário da opção 2
+void subMenu(void);
