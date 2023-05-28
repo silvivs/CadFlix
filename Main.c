@@ -5,6 +5,11 @@
 
 int main(void) {
   int op = 0;
+  int N = 0;
+
+  scanf("%d", &N);
+  
+  Filme* tabela[N];
 
   menu();
 
@@ -12,7 +17,8 @@ int main(void) {
 
     switch(op){
       case 1:
-
+      //parei aqui
+      //todas vez que a opção 1 for selecionada a tabela aumenta dinamicamente, mas o comando do trabalho diz que não deve ser colocado mais que N na tabela. Informação conflitante?
       break;
 
 
