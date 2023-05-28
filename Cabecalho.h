@@ -44,3 +44,5 @@ void menu(void);
 
 //menu secundário da opção 2
 void subMenu(void);
+
+void printf_tabela(Filme** tabela, int tam);

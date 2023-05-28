@@ -12,13 +12,38 @@ int main(void) {
 
     switch(op){
       case 1:
+
       break;
 
+
       case 2:
+
+      subMenu();
+
+      int sub_op2 = 0;
+      scanf("%d", &sub_op2);
+
+      switch(sub_op2){
+        case 1:
+        break;
+
+        case 2:
+        break;
+
+        case 3:
+        break;
+
+        default:
+        printf("Opcao invalida\n");
+        break;
+      }
+
       break;
+
 
       case 3:
       break;
+
 
       default:
       printf("Opcao invalida!\n\n");

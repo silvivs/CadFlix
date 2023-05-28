@@ -14,7 +14,7 @@ struct info {
   char genero[51];
   int ano;
   int faixaEtaria;
-}
+};
 
 Filme* criar_filme() {
   Filme* f = (Filme*) malloc(sizeof(Filme));
@@ -33,37 +33,36 @@ void free_filme(Filme* f) {
 }
 
 void imprimir_filme(Filme* f) {
-
-  printf("Nome: %s\n", f->nome);
-  printf("Preço: %.2f\n", f->preco);
-  printf("Diretor: %s\n", f->informacoes->diretor);
-  printf("Ano: %d\n", f->informacoes->ano);
-  printf("Gênero: %s\n", f->informacoes->genero);
-  printf("Faixa etária: %d\n", f->informacoes->faixaEtaria);
-
+  printf("%.2f R$ || %s\n (%s, %d) || %s %d\n", f->preco, f->nome, f->informacoes->genero, f->informacoes->faixaEtaria, f->informacoes->diretor, f->informacoes->ano);
 }
 
 void set_nome(Filme* f, char* novo) {
+  printf("Nome: %s\n", f->nome);
   strcpy(f->nome, novo);
 }
 
 void set_preco(Filme* f, float novo) {
+  printf("Preço: %.2f\n", f->preco);
   f->preco = novo;
 }
 
 void set_diretor(Filme* f, char* novo) {
+  printf("Diretor: %s\n", f->informacoes->diretor);
   strcpy(f->informacoes->diretor, novo);
 }
 
 void set_genero(Filme* f, char* novo) {
+  printf("Gênero: %s\n", f->informacoes->genero);
   strcpy(f->informacoes->genero, novo);
 }
 
 void set_ano(Filme* f, int novo) {
+  printf("Ano: %d\n", f->informacoes->ano);
   f->informacoes->ano = novo;
 }
 
 void set_faixaetaria(Filme* f, int novo) {
+  printf("Faixa etária: %d\n", f->informacoes->faixaEtaria);
   f->informacoes->faixaEtaria = novo;
 }
 
@@ -79,9 +78,17 @@ void  menu(void) {
 
 void subMenu(void) {
 
-  printf("RENOMEAR TITULO\n");
-  printf("ATUALIZAR PRECO\n");
-  printf("ATUALIZAR GENERO\n");
+  printf("1 - RENOMEAR TITULO\n");
+  printf("2 - ATUALIZAR PRECO\n");
+  printf("3 - ATUALIZAR GENERO\n");
 
 }
 
+void print_tabela(Filme** tabela, int tam) {
+  printf("-------------TABELA DE FILMES-------------\n\n");
+  for(int i = 0 ; i < tam ; i++) {
+    printf("%.4d -- ", i+1);
+    imprimir_filme(tabela[i]);
+  }
+  menu();
+}
