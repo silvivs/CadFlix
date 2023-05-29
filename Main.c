@@ -23,13 +23,16 @@ int main(void) {
       case 1:
       if(index == N){
          N++;
-         index = N;
+         index = N - 1;
          Filme** tabela = (Filme**)realloc(tabela, N * sizeof(Filme*));
          tabela[index] = criar_filme();
          leitura(tabela, index);
+         print_tabela(tabela, N);
+
       }else{
         tabela[index] = criar_filme();
         leitura(tabela, index);
+        print_tabela(tabela, N);
         index++;
       }
       break;
@@ -122,7 +125,7 @@ void leitura(Filme** tabela, int index) {
     set_faixaetaria(tabela[index], faixaEtaria);
 
   }else{
-    printf("Faixa etaria");
+    printf("Faixa etaria: ");
     scanf("%d", &faixaEtaria);
     set_faixaetaria(tabela[index], faixaEtaria);
   }

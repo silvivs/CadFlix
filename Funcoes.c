@@ -40,7 +40,7 @@ void free_filme(Filme* f) {
 }
 
 void imprimir_filme(Filme* f) {
-  printf("%.2f R$ || %s\n (%s, %d) || %s %d\n", f->preco, f->nome, f->informacoes->genero, f->informacoes->faixaEtaria, f->informacoes->diretor, f->informacoes->ano);
+  printf("%.2f R$ || %s (%s, %d) || %s %d\n", f->preco, f->nome, f->informacoes->genero, f->informacoes->faixaEtaria, f->informacoes->diretor, f->informacoes->ano);
 }
 
 void set_nome(Filme* f, char* novo) {
@@ -91,5 +91,4 @@ void print_tabela(Filme** tabela, int tam) {
     printf("%.4d -- ", i+1);
     imprimir_filme(tabela[i]);
   }
-  menu();
 }
