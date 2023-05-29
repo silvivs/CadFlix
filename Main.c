@@ -19,6 +19,7 @@ int main(void) {
   menu();
 
   while(scanf("%d", &op), op != 4){
+    getchar();
 
     switch(op){
       case 1:
@@ -92,27 +93,35 @@ int procuraSubstring(char* string) {
 void leitura(Filme** tabela, int index) {
   printf("Nome: ");
   char nome[101];
-  scanf("%s", nome);
+  //scanf("%s", nome);
+  fgets(nome, sizeof(nome), stdin);
+  nome[strcspn(nome, "\n")] = '\0';
   set_nome(tabela[index], nome);
 
   printf("Preco: ");
   float preco = 0;
   scanf("%f", &preco);
+  getchar();
   set_preco(tabela[index], preco);
 
   printf("Diretor: ");
   char diretor[101];
-  scanf("%s", diretor);
+  //scanf("%s", diretor);
+  fgets(diretor, sizeof(diretor), stdin);
+  diretor[strcspn(diretor, "\n")] = '\0';
   set_diretor(tabela[index], diretor);
 
   printf("Ano: ");
   int ano = 0;
   scanf("%d", &ano);
+  getchar();
   set_ano(tabela[index], ano);
 
   printf("Genero: ");
   char genero[51];
-  scanf("%s", genero);
+  //scanf("%s", genero);
+  fgets(genero, sizeof(genero), stdin);
+  genero[strcspn(genero, "\n")] = '\0';
   set_genero(tabela[index], genero);
  
   int faixaEtaria = 0;

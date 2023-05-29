@@ -3,17 +3,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct filme {
-  char nome[101];
-  float preco;
-  Info* informacoes;
-};
-
 struct info {
   char diretor[101];
   char genero[51];
   int ano;
   int faixaEtaria;
+};
+
+struct filme {
+  char nome[101];
+  float preco;
+  Info* informacoes;
 };
 
 Filme* criar_filme() {
@@ -24,7 +24,9 @@ Filme* criar_filme() {
     exit(1);
   }
 
-  f->informacoes = (Info*) malloc(sizeof(Info));
+  //f->informacoes = (Info*) malloc(sizeof(Info));
+  f->informacoes = NULL;
+  f->informacoes = (struct info*) malloc(sizeof(struct info));
 
   if(f->informacoes == NULL) {
     printf("Memoria insulficiente!\n");
