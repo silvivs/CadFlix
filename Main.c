@@ -14,7 +14,7 @@ int main(void) {
   printf("Entre com o tamanho da sua tabela: ");
   scanf("%d", &N);
 
-  Filme **tabela = (Filme **)malloc(N * sizeof(Filme *));
+  Filme** tabela = (Filme**)malloc(N * sizeof(Filme*));
 
   menu();
 
@@ -100,9 +100,9 @@ int main(void) {
         char diretor[101];
         fgets(diretor, sizeof(diretor), stdin);
         diretor[strcspn(diretor, "\n")] = '\0';
-        set_diretor(tabela[id], diretor);
+        set_diretor(tabela[id - 1], diretor);
 
-        print_tabela(tabela, index + 1);
+        print_tabela(tabela, index);
 
         break;
 
