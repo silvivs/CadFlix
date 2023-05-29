@@ -24,8 +24,6 @@ Filme* criar_filme() {
     exit(1);
   }
 
-  //f->informacoes = (Info*) malloc(sizeof(Info));
-  f->informacoes = NULL;
   f->informacoes = (struct info*) malloc(sizeof(struct info));
 
   if(f->informacoes == NULL) {
