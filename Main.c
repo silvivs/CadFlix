@@ -23,20 +23,26 @@ int main(void) {
 
     switch(op){
       case 1:
-      if(index == N){
-         N++;
-         index = N - 1;
-         tabela = (Filme**)realloc(tabela, N * sizeof(Filme*));
-         tabela[index] = criar_filme();
-         leitura(tabela, index);
-         print_tabela(tabela, N);
+      // if(index == N){
+      //    N++;
+      //    index = N - 1;
+      //    //tabela = (Filme**)realloc(tabela, N * sizeof(Filme*));
+      //    tabela = (Filme**)realloc(tabela, N * sizeof(Filme*));
+      //    tabela[index] = criar_filme();
+      //    leitura(tabela, index);
+      //    print_tabela(tabela, N);
 
-      }else{
-        tabela[index] = criar_filme();
-        leitura(tabela, index);
-        print_tabela(tabela, N);
-        index++;
-      }
+      // }else{
+      //   tabela[index] = criar_filme();
+      //   leitura(tabela, index);
+      //   print_tabela(tabela, N);
+      //   index++;
+      // }
+
+      tabela[index] = criar_filme();
+      leitura(tabela, index);
+      print_tabela(tabela, index+1);
+      index++;
       break;
 
 
@@ -93,6 +99,7 @@ int procuraSubstring(char* string) {
 void leitura(Filme** tabela, int index) {
   printf("Nome: ");
   char nome[101];
+  //scanf("%s", nome);
   fgets(nome, sizeof(nome), stdin);
   nome[strcspn(nome, "\n")] = '\0';
   set_nome(tabela[index], nome);
@@ -105,6 +112,7 @@ void leitura(Filme** tabela, int index) {
 
   printf("Diretor: ");
   char diretor[101];
+  //scanf("%s", diretor);
   fgets(diretor, sizeof(diretor), stdin);
   diretor[strcspn(diretor, "\n")] = '\0';
   set_diretor(tabela[index], diretor);
@@ -117,6 +125,7 @@ void leitura(Filme** tabela, int index) {
 
   printf("Genero: ");
   char genero[51];
+  //scanf("%s", genero);
   fgets(genero, sizeof(genero), stdin);
   genero[strcspn(genero, "\n")] = '\0';
   set_genero(tabela[index], genero);
