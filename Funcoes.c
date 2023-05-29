@@ -37,32 +37,26 @@ void imprimir_filme(Filme* f) {
 }
 
 void set_nome(Filme* f, char* novo) {
-  printf("Nome: %s\n", f->nome);
   strcpy(f->nome, novo);
 }
 
 void set_preco(Filme* f, float novo) {
-  printf("Preço: %.2f\n", f->preco);
   f->preco = novo;
 }
 
 void set_diretor(Filme* f, char* novo) {
-  printf("Diretor: %s\n", f->informacoes->diretor);
   strcpy(f->informacoes->diretor, novo);
 }
 
 void set_genero(Filme* f, char* novo) {
-  printf("Gênero: %s\n", f->informacoes->genero);
   strcpy(f->informacoes->genero, novo);
 }
 
 void set_ano(Filme* f, int novo) {
-  printf("Ano: %d\n", f->informacoes->ano);
   f->informacoes->ano = novo;
 }
 
 void set_faixaetaria(Filme* f, int novo) {
-  printf("Faixa etária: %d\n", f->informacoes->faixaEtaria);
   f->informacoes->faixaEtaria = novo;
 }
 
