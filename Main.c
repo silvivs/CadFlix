@@ -10,7 +10,8 @@ int main(void) {
   int op = 0;
   int N = 0;
   int index = 0;
-
+  
+  printf("Entre com o tamanho da sua tabela: ");
   scanf("%d", &N);
   
   Filme** tabela = (Filme**)malloc(N * sizeof(Filme*));
