@@ -24,7 +24,6 @@ int main(void) {
     switch (op) {
       case 1:
         tabela[index] = criar_filme();
-        // leitura(tabela, index);
 
         printf("Nome: ");
         char nome[101];
@@ -82,6 +81,7 @@ int main(void) {
         int id = 0;
         int sub_op2 = 0;
         scanf("%d", &sub_op2);
+        getchar();
 
         switch (sub_op2) {
           case 1:
@@ -143,6 +143,28 @@ int main(void) {
         break;
 
       case 3:
+        printf("Informe o codigo do filme que será apagado: ");
+        scanf("%d", &id);
+        getchar();
+
+        free_filme(tabela[id-1]);
+        tabela[id-1] = NULL;
+
+        for(int i = 0 ; i < index -1 ; i++){
+          if(tabela[i] == NULL){
+            tabela[i] = tabela[i+1];
+            tabela[i+1] = NULL;
+          }
+        }
+
+        N--;
+
+        tabela = (Filme**) realloc(tabela, N * sizeof(Filme*));
+
+        index--;
+
+        print_tabela(tabela, index);
+
         break;
 
       default:
@@ -157,15 +179,10 @@ int main(void) {
 
 int procuraSubstring(char *string) {
   char *resultado = strstr(string, "Terror");
-  if (resultado != NULL)
-  {
+  if (resultado != NULL) {
     return 1;
   }
-  else
-  {
+  else {
     return 0;
   }
-}
-
-void leitura(Filme **tabela, int index) {
 }
