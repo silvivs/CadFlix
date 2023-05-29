@@ -24,6 +24,13 @@ Filme* criar_filme() {
     exit(1);
   }
 
+  f->informacoes = (Info*) malloc(sizeof(Info));
+
+  if(f->informacoes == NULL) {
+    printf("Memoria insulficiente!\n");
+    exit(1);
+  }
+
   return f;
 
 }

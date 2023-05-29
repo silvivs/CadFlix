@@ -116,7 +116,7 @@ void leitura(Filme** tabela, int index) {
   if(procuraSubstring(genero) == 1){
     printf("Faixa etaria: ");
     while(scanf("%d", &faixaEtaria), faixaEtaria < 18){
-      printf("Filmes de Terror nao podem ter classificacao para menores de 18 anos!Digite outro valor: \n");
+      printf("Filmes de Terror nao podem ter classificacao para menores de 18 anos!Digite outro valor: ");
     }
 
     set_faixaetaria(tabela[index], faixaEtaria);
