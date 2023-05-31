@@ -3,9 +3,6 @@
 #include <stdlib.h>
 #include "Cabecalho.h"
 
-int procuraSubstring(char *string);
-void leitura(Filme **tabela, int index);
-
 int main(void) {
   int op = 0;
   int N = 0;
@@ -191,14 +188,4 @@ int main(void) {
   }
 
   return 0;
-}
-
-int procuraSubstring(char *string) {
-  char *resultado = strstr(string, "Terror");
-  if (resultado != NULL) {
-    return 1;
-  }
-  else {
-    return 0;
-  }
 }

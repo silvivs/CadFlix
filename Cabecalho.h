@@ -45,4 +45,8 @@ void menu(void);
 //menu secundário da opção 2
 void subMenu(void);
 
+//imprime a tabela de filmes cadastrados
 void print_tabela(Filme** tabela, int tam);
+
+//procura a substring "Terror" na string relacionada ao genero do filme
+int procuraSubstring(char *string);

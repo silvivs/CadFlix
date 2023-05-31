@@ -94,3 +94,15 @@ void print_tabela(Filme** tabela, int tam) {
     imprimir_filme(tabela[i]);
   }
 }
+
+
+int procuraSubstring(char *string) {
+  char *resultado = strstr(string, "Terror");
+  if (resultado != NULL) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+
