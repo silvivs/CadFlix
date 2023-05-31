@@ -23,6 +23,12 @@ int main(void) {
 
     switch (op) {
       case 1:
+        if (N == index) {
+          printf("Limite maximo alcancado\n");
+          menu();
+          continue;
+        }
+        
         tabela[index] = criar_filme();
 
         printf("Nome: ");
@@ -130,6 +136,16 @@ int main(void) {
             fgets(genero, sizeof(genero), stdin);
             genero[strcspn(genero, "\n")] = '\0';
             set_genero(tabela[id - 1], genero);
+
+            if (procuraSubstring(genero) == 1) {
+               printf("Faixa etaria: ");
+               while (scanf("%d", &faixaEtaria), faixaEtaria < 18) {
+                  printf("Filmes de Terror nao podem ter classificacao para menores de 18 anos!Digite outro valor: ");
+             }
+
+            set_faixaetaria(tabela[id - 1], faixaEtaria);
+            }
+
 
             print_tabela(tabela, index);        
 

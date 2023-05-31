@@ -71,7 +71,7 @@ void set_faixaetaria(Filme* f, int novo) {
 
 void  menu(void) {
 
-  printf("MENU DE OPCOES\n\n");
+  printf("\nMENU DE OPCOES\n\n");
   printf("1 - CADASTRAR UM NOVO TITULO\n");
   printf("2 - ATUALIZAR INFO DE UM TITULO\n");
   printf("3 - EXCLUIR UM TITULO\n");
@@ -88,7 +88,7 @@ void subMenu(void) {
 }
 
 void print_tabela(Filme** tabela, int tam) {
-  printf("-------------TABELA DE FILMES-------------\n\n");
+  printf("\n-------------TABELA DE FILMES-------------\n\n");
   for(int i = 0 ; i < tam ; i++) {
     printf("%.4d -- ", i+1);
     imprimir_filme(tabela[i]);
