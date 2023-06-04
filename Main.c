@@ -170,11 +170,9 @@ int main(void) {
           }
         }
 
-        N--;
-
-        tabela = (Filme**) realloc(tabela, N * sizeof(Filme*));
-
         index--;
+
+        tabela = (Filme**) realloc(tabela, index * sizeof(Filme*));
 
         print_tabela(tabela, index);
 
@@ -186,6 +184,11 @@ int main(void) {
     }
     menu();
   }
+
+  for(int i = 0 ; i < N ; i++){
+    free(tabela[i]);
+  }
+  free(tabela);
 
   return 0;
 }
