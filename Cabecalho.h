@@ -9,6 +9,9 @@ typedef struct filme Filme;
 //estrutura para informações a respeito do filme
 typedef struct info Info;
 
+//estrutura para lista de filmes
+typedef struct lista Lista;
+
 //Função que cria e retorna um ponteiro simples para o tipo Filme
 Filme* criar_filme();
 
