@@ -13,8 +13,17 @@ typedef struct info Info;
 //struct for movie list
 typedef struct list List;
 
-//function thar creates and returns a simple pointer to type Movie
-Movie* createMovie(void);
+//function that creates a movie and returns a simple pointer to type Movie
+Movie* createMovie(char* name, float price, char* director, char* genre, int year, int age);
+
+//function that creates a list and return a simple pointer to type List
+List* createList(void);
+
+//function that checks if a list is empty
+int isEmpty(List* head);
+
+//to verify malloc error for char
+void verify_mallocError_for_Char(char* string);
 
 //function that deletes a movie and frees up memory
 void freeMovies(Movie* movie);
@@ -22,9 +31,15 @@ void freeMovies(Movie* movie);
 //function that prints the information of a movie
 void display(Movie* movie);
 
+//function that delete a movie
+void delete(List* head, char* name);
+
 /*
 Manipulation Functions
 */
+
+//function that insert a movie at beginning
+void insertAtBeginning(List* head);
 
 //functions that accesses and modifies the name of a movie
 void setName(Movie* movie, char* newName);
